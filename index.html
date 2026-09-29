@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Wirality case study: Go Colors 'Life Moves In Your Comfort Zone' influencer campaign.">
+<title>Go Colors × Wirality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: single dark editorial column; hero headline over a drifting strip of creator reels, then brief → buckets → results → creative wall */
+:root{
+  --ink:#141015;        /* ground, warm black from Wirality's brand plate */
+  --panel:#1e1820;      /* raised surfaces */
+  --line:#352c37;       /* hairlines */
+  --cloth:#f3ebe4;      /* primary text, undyed cotton */
+  --muted:#a89ca6;      /* secondary text */
+  --plum:#c98a9b;       /* accent, the burgundy of the hero trouser, lifted for dark */
+  --sand:#e4c79a;       /* secondary accent for figures */
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--cloth);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+a{color:var(--plum)}
+:focus-visible{outline:2px solid var(--plum);outline-offset:3px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;border-bottom:1px solid var(--line)}
+.top img{height:30px;width:auto}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,88px) 32px;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,64px);align-items:end}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--plum);margin:0 0 18px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(42px,7.4vw,96px);line-height:.95;letter-spacing:-.03em;margin:0;text-wrap:balance}
+h1 em{font-style:normal;font-weight:400;color:var(--plum)}
+.lede{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:44ch;margin:0}
+.lede strong{color:var(--cloth);font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;padding:0;list-style:none}
+.facts li{font-size:14px;color:var(--muted)}
+.facts b{display:block;font-family:var(--display);font-weight:600;font-size:22px;color:var(--cloth)}
+
+/* reel strip */
+.strip{overflow:hidden;padding-block:28px 8px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.strip-track{display:flex;gap:14px;width:max-content;animation:drift 80s linear infinite}
+.strip img{height:clamp(200px,26vw,300px);aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;max-width:none}
+@keyframes drift{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.strip-track{animation:none}}
+
+/* sections */
+section{padding-block:clamp(48px,8vw,96px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:220px 1fr;gap:24px;margin-bottom:40px}
+.sec-head .eyebrow{margin:6px 0 0}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance;max-width:20ch}
+.prose{max-width:62ch;color:var(--muted);font-size:17px}
+.prose p{margin:0 0 1em}
+.prose strong{color:var(--cloth);font-weight:600}
+
+.brief-grid{display:grid;grid-template-columns:220px 1fr 1fr;gap:24px 48px}
+.brief-grid > *{min-width:0}
+.quote{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);line-height:1.2;font-weight:400;margin:0;color:var(--cloth)}
+.quote span{color:var(--plum)}
+
+.asks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:48px}
+.asks div{background:var(--ink);padding:26px 24px}
+.asks h3{font-family:var(--display);font-weight:600;font-size:20px;margin:0 0 8px}
+.asks p{margin:0;color:var(--muted);font-size:15px}
+
+/* buckets */
+.buckets{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:620px}
+th{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 16px 14px 0;border-bottom:1px solid var(--line)}
+td{padding:22px 16px 22px 0;border-bottom:1px solid var(--line);vertical-align:top;font-size:15px;color:var(--muted)}
+td:first-child{font-family:var(--display);font-size:20px;font-weight:600;color:var(--cloth);width:34%}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border:1px solid var(--line);border-radius:99px;color:var(--sand);white-space:nowrap}
+
+/* results */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.kpi{background:var(--panel);padding:26px 22px 22px;min-width:0}
+.kpi dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kpi dd{margin:10px 0 0;font-family:var(--display);font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1;color:var(--sand);font-variant-numeric:tabular-nums}
+.kpi dd.tba{color:var(--line)}
+.note{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px}
+
+/* creative wall */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{font:500 13px var(--body);color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:99px;padding:7px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{color:var(--ink);background:var(--cloth);border-color:var(--cloth)}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:28px 20px}
+.card{min-width:0}
+.card figure{margin:0;position:relative}
+.card img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;background:var(--panel)}
+.card .num{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:11px;background:rgba(20,16,21,.78);color:var(--cloth);padding:4px 8px;border-radius:6px}
+.card .hl{position:absolute;bottom:10px;left:10px;right:10px;display:flex;gap:6px}
+.card .hl span{flex:1;background:rgba(20,16,21,.82);border-radius:8px;padding:8px 10px;font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em}
+.card .hl b{display:block;font-family:var(--display);font-size:18px;color:var(--cloth);letter-spacing:0;text-transform:none;font-variant-numeric:tabular-nums}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;margin:12px 0 0}
+.metrics div{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px}
+.metrics dt{color:var(--muted)}
+.metrics dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--cloth)}
+.metrics dd.tba{color:var(--line)}
+
+footer{border-top:1px solid var(--line);padding-block:40px 56px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:14px}
+footer img{height:26px;width:auto}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .sec-head,.brief-grid{grid-template-columns:1fr}
+  .asks{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:480px){
+  .wall{grid-template-columns:1fr 1fr;gap:22px 12px}
+  .metrics{grid-template-columns:1fr}
+  .card .hl b{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <img src="wirality-logo.png" alt="Wirality">
+    <span class="tag">Case study · Influencer marketing</span>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Go Colors · Brand ambassador launch</p>
+      <h1>Life moves in your <em>comfort zone.</em></h1>
+    </div>
+    <div>
+      <p class="lede">Go Colors onboarded its first-ever brand ambassador and repositioned from a leggings-first label to <strong>India's complete women's bottomwear destination</strong>. The film carried the story on CTV and streaming. We made it personal through the women living it every day.</p>
+      <ul class="facts">
+        <li><b id="f-creators">14</b>creator reels</li>
+        <li><b>3</b>creator buckets</li>
+        <li><b>90 days</b>paid usage rights</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="strip" aria-hidden="true"><div class="strip-track" id="strip"></div></div>
+
+<div class="wrap">
+  <section id="brief">
+    <div class="brief-grid">
+      <p class="eyebrow">The brief</p>
+      <div>
+        <p class="quote">Comfort is not where life slows down. <span>It is where life moves.</span></p>
+      </div>
+      <div class="prose">
+        <p>The brand film carried the idea at scale. The influencer layer had a different job: make "comfort that moves with you" feel <strong>lived-in and relatable</strong>, through real women's workdays, wardrobes and weekends.</p>
+        <p>That meant content that integrates the campaign thought into how creators already talk to their audience, not a straight product ad.</p>
+      </div>
+    </div>
+    <div class="asks">
+      <div><h3>Curated shortlist</h3><p>Micro and nano creators matched to three audience profiles, with rates, for fast approval.</p></div>
+      <div><h3>Native content</h3><p>Workwear styling, day-in-the-life and comfort-led routines built around the campaign thought.</p></div>
+      <div><h3>Whitelisting rights</h3><p>90-day paid usage on every piece, so the best reels could be amplified through performance marketing.</p></div>
+    </div>
+  </section>
+
+  <section id="creators">
+    <div class="sec-head">
+      <p class="eyebrow">Who we cast</p>
+      <h2>Three kinds of women, one idea of comfort.</h2>
+    </div>
+    <div class="buckets">
+      <table>
+        <thead><tr><th>Profile</th><th>Content style</th><th>Creator tier</th></tr></thead>
+        <tbody>
+          <tr><td>Corporate women, working professionals aged 24–35</td><td>Office style, productivity, day-in-my-life, GRWM for work</td><td><span class="pill">Micro / Nano</span></td></tr>
+          <tr><td>Women in fashion, style-forward creators</td><td>Styling edits, outfit breakdowns, trend integration</td><td><span class="pill">Micro / Nano</span></td></tr>
+          <tr><td>Mom creators and travel creators</td><td>Versatility between work and personal life</td><td><span class="pill">Micro / Nano</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="sec-head">
+      <p class="eyebrow">Results</p>
+      <h2>Organic reach first, then paid amplification.</h2>
+    </div>
+    <dl class="kpis" id="kpis"></dl>
+    <p class="note" id="kpi-note"></p>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <p class="eyebrow">The work</p>
+      <h2>Every reel, and how it performed.</h2>
+    </div>
+    <div class="filters" role="group" aria-label="Sort creatives">
+      <button type="button" id="sort-order" aria-pressed="true">In order</button>
+      <button type="button" id="sort-roas" aria-pressed="false">Best ROAS</button>
+      <button type="button" id="sort-views" aria-pressed="false">Most views</button>
+    </div>
+    <div class="wall" id="wall"></div>
+  </section>
+
+  <footer>
+    <img src="wirality-logo.png" alt="Wirality">
+    <span>Wirality Media · Bengaluru · Performance, social, creative, influencer and OOH</span>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   EDIT RESULTS HERE. Leave a value as null to show "—".
+   Money in ₹ (numbers only). Rates as percentages (e.g. 1.8 for 1.8%).
+   ============================================================ */
+const CAMPAIGN = {
+  adSpend: null, purchases: null, costPerPurchase: null, roas: null,
+  views: null, vtr: null, ctr: null, cvr: null
+};
+
+const CREATIVES = [
+  { img:"c01.jpg", comments:25, shares:153 },
+  { img:"c02.jpg" }, { img:"c03.jpg" }, { img:"c04.jpg" }, { img:"c05.jpg" },
+  { img:"c06.jpg" }, { img:"c07.jpg" }, { img:"c08.jpg" }, { img:"c09.jpg" },
+  { img:"c10.jpg" }, { img:"c11.jpg" }, { img:"c12.jpg" }, { img:"c13.jpg" },
+  { img:"c14.jpg" }
+];
+/* Per-creative fields: adSpend, purchases, costPerPurchase, ctr, roas, cvr, views, vtr, comments, shares */
+
+const inr = n => "₹" + (n >= 1e7 ? (n/1e7).toFixed(2)+" Cr" : n >= 1e5 ? (n/1e5).toFixed(1)+" L" : Math.round(n).toLocaleString("en-IN"));
+const big = n => n >= 1e7 ? (n/1e7).toFixed(1)+" Cr" : n >= 1e5 ? (n/1e5).toFixed(1)+" L" : n >= 1e3 ? (n/1e3).toFixed(1)+"K" : String(n);
+const FIELDS = [
+  ["adSpend","Ad spend",inr],["purchases","Purchases",big],["costPerPurchase","Cost / purchase",inr],
+  ["ctr","CTR",v=>v+"%"],["roas","ROAS",v=>v+"x"],["cvr","CVR",v=>v+"%"],
+  ["views","Views",big],["vtr","VTR",v=>v+"%"],["comments","Comments",big],["shares","Shares",big]
+];
+const fmt = (key,v) => v == null ? "—" : FIELDS.find(f=>f[0]===key)[2](v);
+
+// KPIs
+const KPI_KEYS = ["adSpend","purchases","costPerPurchase","roas","views","vtr","ctr","cvr"];
+const kpis = document.getElementById("kpis");
+kpis.innerHTML = KPI_KEYS.map(k => {
+  const label = FIELDS.find(f=>f[0]===k)[1], v = CAMPAIGN[k];
+  return `<div class="kpi"><dt>${label}</dt><dd class="${v==null?'tba':''}">${fmt(k,v)}</dd></div>`;
+}).join("");
+const pending = KPI_KEYS.filter(k => CAMPAIGN[k] == null).length;
+document.getElementById("kpi-note").textContent = pending ? "Campaign figures being finalised." : "";
+
+// strip (duplicated for seamless loop)
+const strip = document.getElementById("strip");
+strip.innerHTML = [...CREATIVES, ...CREATIVES].map(c => `<img src="creatives/${c.img}" alt="" loading="lazy">`).join("");
+
+// wall
+const wall = document.getElementById("wall");
+function render(list){
+  wall.innerHTML = list.map(c => {
+    const hl = [["views","Views"],["roas","ROAS"]].map(([k,l]) => `<span>${l}<b>${fmt(k,c[k])}</b></span>`).join("");
+    const rows = FIELDS.map(([k,l]) => `<div><dt>${l}</dt><dd class="${c[k]==null?'tba':''}">${fmt(k,c[k])}</dd></div>`).join("");
+    return `<article class="card"><figure><img src="creatives/${c.img}" alt="Go Colors creator reel ${c.n}" loading="lazy"><span class="num">${String(c.n).padStart(2,"0")}</span><div class="hl">${hl}</div></figure><dl class="metrics">${rows}</dl></article>`;
+  }).join("");
+}
+CREATIVES.forEach((c,i) => c.n = i+1);
+const sorts = {
+  "sort-order": l => [...l].sort((a,b)=>a.n-b.n),
+  "sort-roas": l => [...l].sort((a,b)=>(b.roas??-1)-(a.roas??-1) || a.n-b.n),
+  "sort-views": l => [...l].sort((a,b)=>(b.views??-1)-(a.views??-1) || a.n-b.n)
+};
+Object.keys(sorts).forEach(id => document.getElementById(id).addEventListener("click", e => {
+  document.querySelectorAll(".filters button").forEach(b => b.setAttribute("aria-pressed", b.id===id));
+  render(sorts[id](CREATIVES));
+}));
+render(CREATIVES);
+</script>
+
+</body>
+</html>
