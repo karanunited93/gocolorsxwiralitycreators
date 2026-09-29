@@ -252,7 +252,7 @@ document.getElementById("kpi-note").textContent = pending ? "Campaign figures be
 
 // strip (duplicated for seamless loop)
 const strip = document.getElementById("strip");
-strip.innerHTML = [...CREATIVES, ...CREATIVES].map(c => `<img src="creatives/${c.img}" alt="" loading="lazy">`).join("");
+strip.innerHTML = [...CREATIVES, ...CREATIVES].map(c => `<img src="${c.img}" alt="" loading="lazy">`).join("");
 
 // wall
 const wall = document.getElementById("wall");
@@ -260,7 +260,7 @@ function render(list){
   wall.innerHTML = list.map(c => {
     const hl = [["views","Views"],["roas","ROAS"]].map(([k,l]) => `<span>${l}<b>${fmt(k,c[k])}</b></span>`).join("");
     const rows = FIELDS.map(([k,l]) => `<div><dt>${l}</dt><dd class="${c[k]==null?'tba':''}">${fmt(k,c[k])}</dd></div>`).join("");
-    return `<article class="card"><figure><img src="creatives/${c.img}" alt="Go Colors creator reel ${c.n}" loading="lazy"><span class="num">${String(c.n).padStart(2,"0")}</span><div class="hl">${hl}</div></figure><dl class="metrics">${rows}</dl></article>`;
+    return `<article class="card"><figure><img src="${c.img}" alt="Go Colors creator reel ${c.n}" loading="lazy"><span class="num">${String(c.n).padStart(2,"0")}</span><div class="hl">${hl}</div></figure><dl class="metrics">${rows}</dl></article>`;
   }).join("");
 }
 CREATIVES.forEach((c,i) => c.n = i+1);
